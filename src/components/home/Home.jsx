@@ -9,7 +9,6 @@ import { GoRepo } from 'react-icons/lib/go'
 
 const Maiden = () => (
   <div className='Maiden'>
-    <Link to='/repository/joined/create' className=' btn btn-lg btn-success'><GoRepo /> 新建仓库</Link>
   </div>
 )
 
