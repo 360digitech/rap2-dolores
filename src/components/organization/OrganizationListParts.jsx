@@ -44,14 +44,6 @@ export class CreateButton extends Component {
   render () {
     return (
       <span className='float-right ml10'>
-        <button className='OrganizationCreateButton btn btn-success' onClick={e => this.setState({ create: true })}>
-          <GoOrganization /> 新建团队
-        </button>
-        {this.state.create && (
-          <RModal when={this.state.create} onClose={e => this.setState({ create: false })} onResolve={this.handleUpdate}>
-            <OrganizationForm title='新建团队' />
-          </RModal>
-        )}
       </span>
     )
   }
