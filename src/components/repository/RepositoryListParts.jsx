@@ -54,17 +54,21 @@ export class CreateButton extends Component {
     return (
       <span className='float-right ml10'>
         {/* DONE 2.1 √我加入的仓库、X所有仓库 是否应该有 新建仓库 */}
+        {organization &&
         <button className='RepositoryCreateButton btn btn-success' onClick={e => this.setState({ create: true })}>
           <GoRepo /> 新建仓库
         </button>
+        }
         {organization &&
           <button className='RepositoryCreateButton btn btn-secondary ml8' onClick={e => this.setState({ import: true })}>
             <GoMoveRight /> 导入仓库
           </button>
         }
+        {organization &&
         <RModal when={this.state.create} onClose={e => this.setState({ create: false })} onResolve={this.handleUpdate}>
           <RepositoryForm title='新建仓库' organization={organization} />
         </RModal>
+        }
         {organization &&
           <RModal when={this.state.import && !!organization} onClose={e => this.setState({ import: false })} onResolve={this.handleUpdate}>
             <ImportRepositoryForm title='导入仓库' orgId={organization.id} />
